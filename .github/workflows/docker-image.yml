@@ -15,5 +15,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - run: docker login -u ${{docker_user}} -p ${{docker_pass}}
     - run: pwd && ls 
     - run: cd docker-images && docker build . --file Dockerfile --tag koehlerlabs/app-demo:$(date +%s)
+    - run: docker push koehlerlabs/app-demo:v1
