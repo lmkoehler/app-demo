@@ -1,0 +1,19 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "homolog" ]
+  pull_request:
+    branches: [ "homolog" ]
+
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - run: pwd && ls 
+    - run: cd docker-images && docker build . --file Dockerfile --tag koehlerlabs/app-demo:$(date +%s)
