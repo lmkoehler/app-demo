@@ -1,0 +1,9 @@
+apiVersion: v1
+data:
+  .dockerconfigjson: eyJhdXRocyI6eyJodHRwczovL2luZGV4LmRvY2tlci5pby92MS8iOnsidXNlcm5hbWUiOiJsZW9uYXJkb21rb2VobGVyIiwicGFzc3dvcmQiOiJhZG1pbi4qMjAxOCIsImVtYWlsIjoibGVvbmFyZG9ta29laGxlckBnbWFpbC5jb20iLCJhdXRoIjoiYkdWdmJtRnlaRzl0YTI5bGFHeGxjanBoWkcxcGJpNHFNakF4T0E9PSJ9fX0=
+kind: Secret
+metadata:
+  name: dockerhub-credencials
+  namespace: "applications"
+type: kubernetes.io/dockerconfigjson
+
