@@ -1,6 +1,12 @@
 FROM ubuntu:20.04
 
-RUN apt update && apt-get update && apt-get install -y nginx php-fpm php-mysql php-cli php-mbstring php-xml && apt-get clean
+ARG DEBIAN_FRONTEND=noninteractive
+ENV TZ=America/Los_Angeles
+RUN ln -snf "/usr/share/zoneinfo/$TZ" /etc/localtime
+RUN echo "$TZ" > /etc/timezone
+RUN apt update && apt-get update && 
+RUN apt-get install -y nginx php-fpm php-mysql php-cli php-mbstring php-xml tzdata
+RUN apt-get clean
 
 RUN sed -i "s|;cgi.fix_pathinfo=1|cgi.fix_pathinfo=0|" /etc/php/7.4/fpm/php.ini
 
