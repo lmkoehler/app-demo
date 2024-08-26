@@ -4,7 +4,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=America/Los_Angeles
 RUN ln -snf "/usr/share/zoneinfo/$TZ" /etc/localtime
 RUN echo "$TZ" > /etc/timezone
-RUN apt update && apt-get update && 
+RUN apt update && apt-get update
 RUN apt-get install -y nginx php-fpm php-mysql php-cli php-mbstring php-xml tzdata
 RUN apt-get clean
 
