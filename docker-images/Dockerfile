@@ -15,7 +15,7 @@ COPY /files/default /etc/nginx/sites-available/default
 
 # Copiar o código da aplicação PHP para o diretório web
 COPY /files/index.html /var/www/html/
-COPY /files/healthz.php /var/www/html/
+# COPY /files/healthz.php /var/www/html/
 
 # Definir permissões corretas para o diretório da aplicação
 RUN chown -R www-data:www-data /var/www/html
